@@ -46,13 +46,13 @@ contract KaseiCoinCrowdsaleDeployer {
        address payable wallet
     ) public {
         // Create a new instance of the KaseiCoin contract.
-        KaseiCoin token = new  KaseiCoin(name, symbol, 0);
+        KaseiCoin token = new KaseiCoin(name, symbol, 0);
         
         // Assign the token contract’s address to the `kasei_token_address` variable.
         kasei_token_address = address(token);
 
         // Create a new instance of the `KaseiCoinCrowdsale` contract
-        KaseiCoinCrowdsale kaseicoin_crowdsale = new KaseiCoinCrowdsale(1, wallet, token);
+        KaseiCoinCrowdsale kaseicoin_crowdsale = new KaseiCoinCrowdsale(1, wallet, token, goal, now, now + 24 weeks);
             
         // Aassign the `KaseiCoinCrowdsale` contract’s address to the `kasei_crowdsale_address` variable.
         kaseicoin_crowdsale_address = address(kaseicoin_crowdsale)
